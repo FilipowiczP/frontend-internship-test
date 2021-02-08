@@ -1,2 +1,101 @@
 // Here goes your CSS
 @import 'layout/main';
+
+.hide {
+    display: none !important;
+}
+
+.error {
+    color: red;
+}
+
+.popup {
+    &__thankYou {
+        font-family: 'Lobster', cursive;
+        font-size: 42px;
+        font-weight: normal;
+    }
+}
+
+.form {
+    position: relative;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+
+    &__title {
+        font-family: 'Lobster', cursive;
+    }
+
+    &__input {
+        height: 30px;
+        border: 1px solid black;
+        margin: 10px 0;
+        padding: 5px 20px;
+    }
+
+    &__label {
+        margin: 25px 0;
+    }
+
+    &__submit {
+        border: none;
+        background-color: black;
+        color: white;
+        font-weight: lighter;
+        padding: 10px 0;
+        width: 100%;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $secondary-color;
+            transition: .7s;
+        }
+
+    }
+
+    &__checkmark {
+        width: 13px;
+        height: 13px;
+        display: inline-block;
+        border: 1px solid black;
+        cursor: pointer;
+        display: inline-block;
+        background: #222 url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+        transition: background-size 0.2s ease;
+    }
+
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__checkbox:checked+&__checkmark {
+        background-size: 60%;
+        transition: background-size 0.25s cubic-bezier(0.7, 0, 0.18, 1.24);
+    }
+
+    &__close {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: black;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+
+
+        &-span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin: 0 auto;
+        }
+    }
+}
